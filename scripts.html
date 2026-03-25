@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowVBot — Scripts de Prospecção</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #8B5CF6;
+      --purple-light: #A78BFA;
+      --purple-dark: #6D28D9;
+      --bg: #06060f;
+      --bg2: #0d0d1f;
+      --white: #ffffff;
+      --gray: #94a3b8;
+      --green: #25D366;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      padding: 24px 20px 64px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 16px 0 32px;
+      border-bottom: 1px solid rgba(139,92,246,0.15);
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple), var(--purple-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-top: 6px;
+    }
+
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 16px;
+      margin-top: 36px;
+    }
+
+    .card {
+      background: rgba(13,13,31,0.9);
+      border: 1px solid rgba(139,92,246,0.15);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .card-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-label .tag {
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.3);
+      color: var(--purple-light);
+      font-size: 0.72rem;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .copy-btn {
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.3);
+      color: var(--purple-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover, .copy-btn.copied {
+      background: rgba(139,92,246,0.3);
+    }
+
+    .copy-btn.copied {
+      color: #4ade80;
+      border-color: rgba(74,222,128,0.4);
+    }
+
+    .script-text {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .tip {
+      background: rgba(139,92,246,0.07);
+      border-left: 3px solid var(--purple);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+    }
+
+    .tip p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+
+    .tip strong {
+      color: var(--white);
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(139,92,246,0.1);
+      margin: 36px 0;
+    }
+
+    .link-box {
+      background: rgba(13,13,31,0.9);
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 8px;
+    }
+
+    .link-box p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .link-url {
+      font-size: 0.85rem;
+      color: var(--purple-light);
+      word-break: break-all;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">FlowVBot</div>
+  <p>Scripts de prospecção — uso interno</p>
+</header>
+
+<!-- DICAS -->
+<div class="tip">
+  <p><strong>Como usar:</strong> Copie o script, troque os campos marcados com [colchetes] e mande direto no WhatsApp ou DM do Instagram do prospect. Nao mande mais de 15 por dia para nao tomar ban.</p>
+</div>
+
+<div class="tip">
+  <p><strong>Link da pagina de proposta:</strong> Mande sempre junto com o script. O prospect abre, ve tudo bonitinho e ja vai com vontade de fechar.</p>
+</div>
+
+<div class="link-box">
+  <p>Pagina de proposta — mande esse link para o prospect:</p>
+  <div class="link-url">https://gui18120.github.io/Flowvbot/proposta.html</div>
+</div>
+
+<hr class="divider" />
+
+<!-- SCRIPTS POR NICHO -->
+
+<div class="section-title">Scripts por nicho</div>
+
+<!-- SALAO / BARBEARIA -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-label">
+      <span>Salao de Beleza / Barbearia</span>
+      <span class="tag">WhatsApp</span>
+    </div>
+    <button class="copy-btn" onclick="copiar(this, 'script-salao')">Copiar</button>
+  </div>
+  <div class="script-text" id="script-salao">Oi [nome]! Vi o [nome do salao] aqui no Instagram.
+
+Trabalho com automacao de atendimento por IA e percebi que muitos saloes perdem clientes por nao conseguir responder rapido no WhatsApp — principalmente fora do horario.
+
+Crio um agente de IA que responde seus clientes automaticamente, faz agendamento e nunca deixa mensagem sem resposta. Tudo configurado para o jeito do seu salao.
+
+Posso te mandar mais detalhes? Aqui esta uma pagina rapida explicando como funciona:
+https://gui18120.github.io/Flowvbot/proposta.html</div>
+</div>
+
+<!-- CLINICA / SAUDE -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-label">
+      <span>Clinica / Saude</span>
+      <span class="tag">WhatsApp</span>
+    </div>
+    <button class="copy-btn" onclick="copiar(this, 'script-clinica')">Copiar</button>
+  </div>
+  <div class="script-text" id="script-clinica">Oi [nome]! Vi a [nome da clinica] no Google.
+
+Sei que clinicas recebem muito volume de mensagem no WhatsApp — agendamento, confirmacao de consulta, duvidas — e e dificil dar conta de tudo.
+
+Crio agentes de IA que fazem esse atendimento automaticamente: respondem perguntas, confirmam consultas e agendam horarios direto pelo WhatsApp, 24h por dia.
+
+Posso te mostrar como funcionaria para a sua clinica? Aqui esta uma pagina com todos os detalhes:
+https://gui18120.github.io/Flowvbot/proposta.html</div>
+</div>
+
+<!-- LOJA / E-COMMERCE -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-label">
+      <span>Loja / Comercio</span>
+      <span class="tag">WhatsApp</span>
+    </div>
+    <button class="copy-btn" onclick="copiar(this, 'script-loja')">Copiar</button>
+  </div>
+  <div class="script-text" id="script-loja">Oi [nome]! Vi a [nome da loja] aqui no Instagram, produto incrivel.
+
+Uma pergunta — voce consegue responder todos os clientes que mandam mensagem no WhatsApp rapidamente? Pergunto porque a maioria das lojas perde vendas por demora no atendimento.
+
+Crio um agente de IA que responde automaticamente, manda catalogo, tira duvidas e encaminha para fechar a compra — sem voce precisar estar no celular.
+
+Mando mais informacoes?
+https://gui18120.github.io/Flowvbot/proposta.html</div>
+</div>
+
+<!-- PERSONAL / SERVICOS -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-label">
+      <span>Personal / Prestador de Servico</span>
+      <span class="tag">WhatsApp</span>
+    </div>
+    <button class="copy-btn" onclick="copiar(this, 'script-personal')">Copiar</button>
+  </div>
+  <div class="script-text" id="script-personal">Oi [nome]! Vi o seu trabalho aqui no Instagram, muito bom.
+
+Voce ja pensou em automatizar o atendimento do seu WhatsApp? Sei que e chato ficar respondendo sempre as mesmas perguntas — preco, horario, disponibilidade — enquanto podia estar focado no seu servico.
+
+Crio agentes de IA que cuidam disso por voce. O cliente manda mensagem, o agente responde, esclarece e ja agenda — tudo automatico.
+
+Aqui esta uma pagina rapida com mais detalhes:
+https://gui18120.github.io/Flowvbot/proposta.html</div>
+</div>
+
+<!-- RESTAURANTE -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-label">
+      <span>Restaurante / Lanchonete</span>
+      <span class="tag">WhatsApp</span>
+    </div>
+    <button class="copy-btn" onclick="copiar(this, 'script-restaurante')">Copiar</button>
+  </div>
+  <div class="script-text" id="script-restaurante">Oi [nome]! Vi o [nome do restaurante] aqui no Instagram.
+
+Muitos restaurantes perdem pedidos porque nao conseguem atender no WhatsApp na hora do rush. O cliente manda, nao recebe resposta rapida e vai embora.
+
+Crio um agente de IA que responde automaticamente, manda o cardapio, confirma pedidos e tira duvidas — 24h por dia, sem precisar de atendente.
+
+Posso te mandar mais detalhes?
+https://gui18120.github.io/Flowvbot/proposta.html</div>
+</div>
+
+<hr class="divider" />
+
+<!-- SCRIPTS DE FOLLOW-UP -->
+<div class="section-title">Follow-up (quando nao responder)</div>
+
+<div class="tip">
+  <p><strong>Espere 2 a 3 dias</strong> antes de mandar o follow-up. Mande apenas uma vez — se nao responder, deixa pra la e vai pro proximo.</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-label">
+      <span>Follow-up Gentil</span>
+    </div>
+    <button class="copy-btn" onclick="copiar(this, 'script-followup')">Copiar</button>
+  </div>
+  <div class="script-text" id="script-followup">Oi [nome], tudo bem? Mandei uma mensagem ha alguns dias sobre automacao de atendimento para o seu negocio.
+
+Caso tenha passado batido, fica a vontade para ver aqui:
+https://gui18120.github.io/Flowvbot/proposta.html
+
+Qualquer coisa e so responder por aqui. Abraco!</div>
+</div>
+
+<hr class="divider" />
+
+<!-- ONDE ENCONTRAR PROSPECTS -->
+<div class="section-title">Onde encontrar prospects</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-label">
+      <span>Passo a passo rapido</span>
+    </div>
+  </div>
+  <div class="script-text" style="color: var(--white);">1. Abre o Instagram
+2. Busca: #salaoSalvador, #barbeariaSalvador, #clinicaSalvador, #lojaSalvador
+3. Filtra por "Contas" (nao por posts)
+4. Procura perfis com 500 a 10.000 seguidores (pequenos, sem estrutura)
+5. Verifica se tem numero de WhatsApp no perfil ou bio
+6. Copia o numero e manda o script no WhatsApp deles
+
+Tambem funciona pelo Google Maps:
+Busca "salao de beleza Salvador" e pega os numeros que aparecem.</div>
+</div>
+
+<script>
+  function copiar(btn, id) {
+    const texto = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(texto).then(() => {
+      btn.textContent = 'Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copiar';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
