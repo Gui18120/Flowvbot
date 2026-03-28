@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Geladon</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #06060f;
+    color: #e8e8f0;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+  }
+
+  .page {
+    padding: 0;
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #06060f 0%, #1a0a2e 60%, #2d0e5c 100%);
+    padding: 48px 52px 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: 80px;
+    width: 130px;
+    height: 130px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 36px;
+  }
+
+  .brand {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .header h1 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+
+  .header h1 span {
+    color: #A78BFA;
+  }
+
+  .header .subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .header .to {
+    margin-top: 28px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+  }
+
+  .header .to strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+  }
+
+  /* BODY */
+  .body {
+    padding: 44px 52px;
+    flex: 1;
+    background: #06060f;
+  }
+
+  .intro {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #c4c4d8;
+    margin-bottom: 40px;
+    max-width: 520px;
+  }
+
+  .intro strong {
+    color: #A78BFA;
+    font-weight: 700;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8B5CF6;
+    margin-bottom: 20px;
+  }
+
+  /* PROBLEMS */
+  .problems {
+    background: #0f0a1e;
+    border-left: 4px solid #8B5CF6;
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .problems .problem-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #e8e8f0;
+  }
+
+  .problem-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .problem-list li {
+    font-size: 14px;
+    color: #a0a0b8;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .problem-list li::before {
+    content: '✗';
+    color: #8B5CF6;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* BENEFITS */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .benefit-card {
+    background: #0f0a1e;
+    border: 1.5px solid #2d1a4e;
+    border-radius: 14px;
+    padding: 22px 20px;
+    transition: all 0.2s;
+  }
+
+  .benefit-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .benefit-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #e8e8f0;
+  }
+
+  .benefit-card p {
+    font-size: 12.5px;
+    color: #a0a0b8;
+    line-height: 1.55;
+  }
+
+  /* RESULT BAR */
+  .result-bar {
+    background: linear-gradient(135deg, #2d0e5c, #4c1d95);
+    border-radius: 16px;
+    padding: 28px 32px;
+    color: white;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .result-bar .quote-icon {
+    font-size: 48px;
+    color: rgba(255,255,255,0.15);
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: -8px;
+  }
+
+  .result-bar .quote-text {
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+  }
+
+  .result-bar .quote-text strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* HOW IT WORKS */
+  .steps {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    right: 22px;
+    height: 2px;
+    background: linear-gradient(90deg, #8B5CF6, #A78BFA);
+    z-index: 0;
+  }
+
+  .step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 auto 12px;
+  }
+
+  .step h4 {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #e8e8f0;
+  }
+
+  .step p {
+    font-size: 11px;
+    color: #a0a0b8;
+    line-height: 1.4;
+    padding: 0 4px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: linear-gradient(135deg, #1a0a2e, #2d0e5c);
+    padding: 24px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: none;
+  }
+
+  .footer .cta-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  .footer .cta-text strong {
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .footer .cta-btn {
+    background: #8B5CF6;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  @media print {
+    body { width: 100%; }
+    .page { min-height: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="brand">FlowVBot</div>
+      <div class="badge">Inteligência Artificial</div>
+    </div>
+    <h1>Seu atendimento<br>no <span>piloto automático</span></h1>
+    <p class="subtitle">Um agente de IA que responde clientes, tira dúvidas e aumenta suas vendas — 24 horas por dia.</p>
+    <p class="to">Apresentado para: <strong>Priscilla — Geladon</strong></p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- INTRO -->
+    <p class="intro">
+      Olá, Priscilla! Imagina ter um <strong>atendente virtual</strong> que nunca dorme, responde na hora e ainda converte curiosos em clientes — tudo pelo WhatsApp da Geladon, sem você precisar fazer nada.
+    </p>
+
+    <!-- PROBLEMS -->
+    <div class="problems">
+      <div class="problem-title">Situação atual de muitas sorveterias</div>
+      <ul class="problem-list">
+        <li>Mensagens sem resposta fora do horário comercial — cliente vai embora</li>
+        <li>Equipe sobrecarregada respondendo sempre as mesmas perguntas</li>
+        <li>Sem tempo pra capturar pedidos e confirmar entregas pelo WhatsApp</li>
+        <li>Oportunidades de venda perdidas por demora no atendimento</li>
+      </ul>
+    </div>
+
+    <!-- BENEFITS -->
+    <p class="section-title">O que o agente faz pela Geladon</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🕐</div>
+        <h3>Atendimento 24/7</h3>
+        <p>Responde clientes a qualquer hora, mesmo quando a loja está fechada.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🍦</div>
+        <h3>Cardápio & sabores</h3>
+        <p>Informa sabores disponíveis, promoções e novidades automaticamente.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📍</div>
+        <h3>Localização & horários</h3>
+        <p>Responde endereço, horário de funcionamento e formas de entrega.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📱</div>
+        <h3>Múltiplos canais</h3>
+        <p>Atende pelo WhatsApp, Instagram e outras redes — tudo integrado em um só agente.</p>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="result-bar">
+      <div class="quote-icon">"</div>
+      <p class="quote-text">
+        Negócios que implementam atendimento com IA reduzem em até <strong>70% o tempo de resposta</strong> e aumentam a conversão de clientes que entram em contato — sem contratar ninguém a mais.
+      </p>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <p class="section-title">Como funciona</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Configuração</h4>
+        <p>Personalizo o agente com as informações da Geladon</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Integração</h4>
+        <p>Conectamos ao WhatsApp da loja em poucos minutos</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Ativo</h4>
+        <p>O agente começa a atender e você acompanha tudo</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Suporte</h4>
+        <p>Ajustes contínuos conforme a necessidade da loja</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="cta-text">
+      <strong>Quer ver na prática?</strong>
+      Posso mostrar uma demo personalizada pra Geladon — sem compromisso.
+    </div>
+    <div class="cta-btn">Falar comigo →</div>
+  </div>
+
+</div>
+</body>
+</html>
